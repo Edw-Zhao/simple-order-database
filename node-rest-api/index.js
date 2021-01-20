@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, "dist/simple-order-database")));
 app.use("/api", orderRoute);
 
 // PORT
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
   console.log("Listening on port " + port);
