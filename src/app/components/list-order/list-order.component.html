@@ -1,0 +1,78 @@
+<div class="container">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+  >
+    <h2 class="h2" style="padding-top: 10px">Order List</h2>
+  </div>
+
+  <div class="table-responsive font-size" style="overflow-x: auto">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="text-center" scope="col">Table</th>
+          <th class="text-center" scope="col">Seat</th>
+          <th class="text-center" scope="col">Appetizer</th>
+          <th class="text-center" scope="col">Drink</th>
+          <th class="text-center" scope="col">Main Course</th>
+          <th class="text-center" scope="col">Urgency</th>
+          <th class="text-center" scope="col">Notes</th>
+          <th class="text-center" scope="col">Served</th>
+          <th class="text-center" scope="col">Payed</th>
+          <th class="text-center" scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of Orders; let i = index">
+          <th class="text-center" scope="row">{{ order.table }}</th>
+          <th class="text-center" scope="row">{{ order.seat }}</th>
+          <td class="text-center">{{ order.appetizer }}</td>
+          <td class="text-center">{{ order.drink }}</td>
+          <td class="text-center align-middle">{{ order.mainCourse }}</td>
+          <td
+            class="text-center"
+            style="font-size: 20px; font-weight: bold; color: red"
+          >
+            {{ order.urgency ? "!" : null }}
+          </td>
+          <td class="text-center">
+            <button
+              class="btn btn-sm btn-primary"
+              (click)="openDialog(order.notes)"
+              *ngIf="order.notes !== ''"
+            >
+              Click here
+            </button>
+          </td>
+          <td
+            class="text-center"
+            style="font-size: 20px; font-weight: bold; color: rgb(58, 231, 58)"
+          >
+            {{ order.served ? "✓" : null }}
+          </td>
+          <td
+            class="text-center"
+            style="font-size: 20px; font-weight: bold; color: rgb(58, 231, 58)"
+          >
+            {{ order.payed ? "✓" : null }}
+          </td>
+          <td class="text-center">
+            <button
+              class="btn btn-sm btn-primary"
+              routerLink="/edit-order/{{ order._id }}"
+              [disabled]="i >= 0 && i <= 3"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-sm btn-danger"
+              (click)="delete(order._id, i)"
+              [disabled]="i >= 0 && i <= 3"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

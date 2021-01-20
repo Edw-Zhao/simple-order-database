@@ -1,0 +1,111 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-md-6 col-sm-8 col-8">
+    <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+      <div class="form-group">
+        <label>Table & Seating:</label>
+        <select
+          #tableSelect
+          class="form-control"
+          formControlName="table"
+          [attr.disabled]="true"
+        >
+          <option value="Table 1">Table 1</option>
+          <option value="Table 2">Table 2</option>
+          <option value="Table 3">Table 3</option>
+          <option value="Table 4">Table 4</option>
+          <option value="Table 5">Table 5</option>
+          <option value="Table 6">Table 6</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Appetizer:</label> <br />
+        <select
+          class="form-control"
+          formControlName="seat"
+          [attr.disabled]="true"
+        >
+          <option value="Seat 1">Seat 1</option>
+          <option value="Seat 2">Seat 2</option>
+          <option value="Seat 3">Seat 3</option>
+          <option value="Seat 4">Seat 4</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Drink</label>
+        <select class="form-control" formControlName="drink">
+          <option value="Water">Water</option>
+          <option value="Coke">Coke</option>
+          <option value="Diet Coke">Diet Coke</option>
+          <option value="Pepsi">Pepsi</option>
+          <option value="Diet Pepsi">Diet Pepsi</option>
+          <option value="Sprite">Sprite</option>
+          <option value="Diet Sprite">Diet Sprite</option>
+          <option value="Ice Tea">Ice Tea</option>
+          <option value="Orange Juice">Orange Juice</option>
+          <option value="None">None</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Main Course:</label>
+        <select class="form-control" formControlName="mainCourse">
+          <option value="Pizza">Pizza</option>
+          <option value="Hamburger">Hamburger</option>
+          <option value="Poutine">Poutine</option>
+          <option value="Tacos">Tacos</option>
+          <option value="Chicken Burger">Chicken Burger</option>
+          <option value="Sushi">Sushi</option>
+          <option value="Mac and Cheese">Mac and Cheese</option>
+          <option value="Steak">Steak</option>
+          <option value="Wings">Wings</option>
+          <option value="None">None</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Urgency:</label>
+        <input
+          class="form-control"
+          type="checkbox"
+          formControlName="urgency"
+          checked="{{ !Orders.urgency }}"
+        />
+      </div>
+      <div class="form-group">
+        <label>Notes:</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="notes"
+          required
+          value="{{ Orders.notes }}"
+        />
+      </div>
+      <div class="form-group">
+        <label>Served:</label>
+        <input
+          class="form-control"
+          type="checkbox"
+          formControlName="served"
+          required
+          checked="{{ !Orders.served }}"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Payed:</label>
+        <input
+          class="form-control"
+          type="checkbox"
+          formControlName="payed"
+          required
+          checked="{{ !Orders.payed }}"
+        />
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary btn-block" type="submit">Update</button>
+      </div>
+    </form>
+  </div>
+</div>

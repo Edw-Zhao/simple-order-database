@@ -1,0 +1,19 @@
+.table td {
+  vertical-align: middle;
+}
+
+.table th {
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 992px) {
+  .font-size {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .font-size {
+    font-size: 12px;
+  }
+}
