@@ -1,8 +1,10 @@
 # Preview:
 
-Adding order: 
-
 <img src="./preview-add.GIF" />
+<p style="text-align: center">Adding an order.</p>
+
+<img src="./preview-note-edit-delete.GIF" />
+<p style="text-align: center">Checking, editting and deleting an order.</p>
 
 ## Development server
 
